@@ -23,32 +23,31 @@ namespace Views
 
         private void SplashScreen_Load(object sender, EventArgs e)
         {
-           timer1.Start();
+
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            panSlide.Left += 2;
-            if (panSlide.Left > 450)
+            if (progressBar1.Value <= 99)
             {
-                
-                panSlide.Left = 250;
-                Thread.Sleep(3000);
-
+                progressBar1.Value += 1;
             }
 
-            if (panSlide.Left == 250)
+            if (progressBar1.Value == 100)
             {
                 timer1.Stop();
                 Login login = new Login();
                 login.Show();
                 this.Hide();
-
-
             }
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
