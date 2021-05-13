@@ -1,0 +1,6 @@
+E:\PROJECT\Tutoré\portfoliov0.1\PortfolioProject\Common\bin\Debug\Common.dll
+E:\PROJECT\Tutoré\portfoliov0.1\PortfolioProject\Common\bin\Debug\Common.pdb
+E:\PROJECT\Tutoré\portfoliov0.1\PortfolioProject\Common\obj\Debug\Common.csprojAssemblyReference.cache
+E:\PROJECT\Tutoré\portfoliov0.1\PortfolioProject\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+E:\PROJECT\Tutoré\portfoliov0.1\PortfolioProject\Common\obj\Debug\Common.dll
+E:\PROJECT\Tutoré\portfoliov0.1\PortfolioProject\Common\obj\Debug\Common.pdb

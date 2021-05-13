@@ -1,0 +1,6 @@
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Config\bin\Debug\Config.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Config\bin\Debug\Config.pdb
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Config\obj\Debug\Config.csprojAssemblyReference.cache
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Config\obj\Debug\Config.csproj.CoreCompileInputs.cache
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Config\obj\Debug\Config.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Config\obj\Debug\Config.pdb
