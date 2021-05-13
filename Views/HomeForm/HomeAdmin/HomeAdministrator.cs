@@ -16,5 +16,10 @@ namespace Views.HomeForm.HomeAdmin
         {
             InitializeComponent();
         }
+
+        private void Container_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

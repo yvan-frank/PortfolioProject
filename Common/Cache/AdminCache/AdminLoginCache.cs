@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Common.Cache.AdminCache
+﻿namespace Common.Cache.AdminCache
 {
-    class AdminLoginCache
+    public class AdminLoginCache
     {
+        public static int IdAdmin { get; set; }
+        public static string Username { get; set; }
     }
 }

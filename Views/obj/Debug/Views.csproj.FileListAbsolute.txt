@@ -97,3 +97,8 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Config.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Guna.UI2.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Config.pdb
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.Controls.MessageBoxCustomize.resources
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.HomeAdmin.HomeAdministrator.resources
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\MetroFramework.Design.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\MetroFramework.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\MetroFramework.Fonts.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.HomeAdmin.MetroTest.resources
