@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using Views.Controls;
 using Views.HomeForm.HomeAdmin;
+using Views.HomeForm.HomeMembreProjet;
 using Views.LoginForm;
 
 namespace Views
@@ -20,7 +21,7 @@ namespace Views
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeAdministrator());
+            Application.Run(new MembreProjetForm());
         }
     }
 }

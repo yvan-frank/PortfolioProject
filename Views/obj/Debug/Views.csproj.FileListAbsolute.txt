@@ -101,4 +101,4 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.Ho
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\MetroFramework.Design.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\MetroFramework.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\MetroFramework.Fonts.dll
-E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.HomeAdmin.MetroTest.resources
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.HomeMembreProjet.MembreProjetForm.resources

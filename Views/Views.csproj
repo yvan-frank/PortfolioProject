@@ -180,6 +180,12 @@
     <Compile Include="HomeForm\HomeAdmin\HomeAdministrator.Designer.cs">
       <DependentUpon>HomeAdministrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeForm\HomeMembreProjet\MembreProjetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm\HomeMembreProjet\MembreProjetForm.Designer.cs">
+      <DependentUpon>MembreProjetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm\HomeAdmin\HomeAdministrator.resx">
       <DependentUpon>HomeAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm\HomeMembreProjet\MembreProjetForm.resx">
+      <DependentUpon>MembreProjetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -249,7 +258,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HomeForm\HomeChefProjet\" />
-    <Folder Include="HomeForm\HomeMembreProjet\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
