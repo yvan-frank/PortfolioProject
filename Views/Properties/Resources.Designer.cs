@@ -61,6 +61,26 @@ namespace Views.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap backgroungapp {
+            get {
+                object obj = ResourceManager.GetObject("backgroungapp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_telegram_app_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_telegram_app_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Bienvenue.
         /// </summary>
         public static string strWelcome {

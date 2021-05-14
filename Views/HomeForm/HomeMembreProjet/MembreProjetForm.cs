@@ -1,28 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Globalization;
+using System.Reflection;
+using System.Resources;
+using System.Runtime.InteropServices;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Guna.UI2.WinForms.Enums;
+using Views.HomeForm.HomeMembreProjet.Form;
+using Views.LoginForm;
 
 namespace Views.HomeForm.HomeMembreProjet
 {
-    public partial class MembreProjetForm : Form
+    public partial class MembreProjetForm : System.Windows.Forms.Form
     {
+
         public MembreProjetForm()
         {
             InitializeComponent();
-        }
-
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            CustomizedPanLan();
         }
 
         #region button de controle
@@ -41,6 +36,19 @@ namespace Views.HomeForm.HomeMembreProjet
             this.WindowState = FormWindowState.Maximized;
             btnRestore.Visible = true;
             btnMaximized.Visible = false;
+
+            #region btnSidebar location
+
+            btnHome.Location = new Point(8,230);
+            btnTache.Location = new Point(8, 310);
+            btnChat.Location = new Point(8, 390);
+            btnSendMail.Location = new Point(8, 470);
+            btnLangue.Location = new Point(8, 550);
+            panLangue.Location = new Point(39, 593);
+
+            #endregion
+
+            btnLangue.Enabled = false;
         }
 
         private void BtnReduire_Click(object sender, EventArgs e)
@@ -53,6 +61,19 @@ namespace Views.HomeForm.HomeMembreProjet
             this.WindowState = FormWindowState.Normal;
             btnMaximized.Visible = true;
             btnRestore.Visible = false;
+
+            #region btnSidebar location
+
+            btnHome.Location = new Point(8, 209);
+            btnTache.Location = new Point(8, 253);
+            btnChat.Location = new Point(8, 297);
+            btnSendMail.Location = new Point(8, 341);
+            btnLangue.Location = new Point(8, 408);
+            panLangue.Location = new Point(39, 451);
+
+            #endregion
+
+            btnLangue.Enabled = true;
         }
 
         #endregion
@@ -60,17 +81,24 @@ namespace Views.HomeForm.HomeMembreProjet
 
         private void BtnTache_Click(object sender, EventArgs e)
         {
-            
+            HideSubmenu();
         }
 
         private void BtnChat_Click(object sender, EventArgs e)
         {
-           
+           HideSubmenu();
+           if (btnMaximized.Enabled)
+           {
+               btnMaximized.Enabled = false;
+           }
+           else
+               btnMaximized.Enabled = true;
+           OnChildForm(new ChatForm());
         }
 
         private void BtnSendMail_Click(object sender, EventArgs e)
         {
-           
+            HideSubmenu();
         }
 
         private void BtnClose_MouseDown(object sender, MouseEventArgs e)
@@ -90,7 +118,93 @@ namespace Views.HomeForm.HomeMembreProjet
 
         private void MembreProjetForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(Thread.CurrentThread.CurrentUICulture.Name);
+            //ResourceManager rm = new ResourceManager("Views.ResourcesLanguage.String",
+            //    Assembly.GetExecutingAssembly());
+            //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
+            //btnHome.Text = rm.GetString("Accueil", new CultureInfo("fr"));
+            //MessageBox.Show(Thread.CurrentThread.CurrentUICulture.Name);
+        }
+
+        //customized panLange
+        private void CustomizedPanLan()
+        {
+            panLangue.Visible = false;
+        }
+
+        //hide sous menu
+        private void HideSubmenu()
+        {
+            if (panLangue.Visible)
+                panLangue.Visible = false;
+
+        }
+
+        //show submenu
+        private void ShowSubmenu(Panel subMenuName)
+        {
+            if (subMenuName.Visible == false)
+            {
+                HideSubmenu();
+                subMenuName.Visible = true;
+            }
+            else
+                subMenuName.Visible = false;
+        }
+
+        #region action bouton langue
+
+        private void BtnLangue_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(panLangue);
+        }
+
+        private void BtnFrancais_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr");
+            this.Controls.Clear();
+            InitializeComponent();
+            HideSubmenu();
+        }
+
+        private void BtnAnglais_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            this.Controls.Clear();
+            InitializeComponent();
+            HideSubmenu();
+        }
+
+        #endregion
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            HideSubmenu();
+            OnChildForm(new AccueilFormMember());
+        }
+
+
+        //method to open form in panel
+        private System.Windows.Forms.Form activForm = null;
+        private void OnChildForm(System.Windows.Forms.Form childForm)
+        {
+            if (activForm != null)
+            {
+                activForm.Close();
+            }
+
+            activForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void PanelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -7,6 +7,7 @@ using MetroFramework.Forms;
 using Views.Controls;
 using Views.HomeForm.HomeAdmin;
 using Views.HomeForm.HomeMembreProjet;
+using Views.HomeForm.HomeMembreProjet.Form;
 using Views.LoginForm;
 
 namespace Views

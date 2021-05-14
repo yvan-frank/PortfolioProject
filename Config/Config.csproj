@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatService\Connexion.cs" />
+    <Compile Include="ChatService\Server.cs" />
+    <Compile Include="ChatService\StatusChangedEventArgs.cs" />
     <Compile Include="Lang\LanguageConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
