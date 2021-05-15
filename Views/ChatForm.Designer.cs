@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatForm));
             this.panInfoConnection = new System.Windows.Forms.Panel();
             this.btnCon = new Guna.UI2.WinForms.Guna2Button();
@@ -44,10 +43,9 @@
             this.txtmessage = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.panContainer = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.paneInfo = new System.Windows.Forms.Panel();
             this.status = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.Label();
+            this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.panInfoConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPortHost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -155,14 +153,13 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.SlateGray;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.SkyBlue;
             this.lblStatus.Location = new System.Drawing.Point(253, 23);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(38, 13);
+            this.lblStatus.Size = new System.Drawing.Size(68, 13);
             this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "Online";
-            this.lblStatus.Click += new System.EventHandler(this.LblStatus_Click);
+            this.lblStatus.Text = "info serveur";
             // 
             // lblUsername
             // 
@@ -217,7 +214,7 @@
             this.btnSend.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSend.Image = global::Views.Properties.Resources.icons8_telegram_app_32;
             this.btnSend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSend.Location = new System.Drawing.Point(478, 4);
+            this.btnSend.Location = new System.Drawing.Point(474, 8);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(42, 41);
             this.btnSend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -278,16 +275,11 @@
             this.panContainer.Size = new System.Drawing.Size(517, 295);
             this.panContainer.TabIndex = 2;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 10000;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // paneInfo
             // 
             this.paneInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(27)))), ((int)(((byte)(36)))));
+            this.paneInfo.Controls.Add(this.txtUsername);
             this.paneInfo.Controls.Add(this.status);
-            this.paneInfo.Controls.Add(this.txtUser);
             this.paneInfo.Controls.Add(this.guna2CirclePictureBox1);
             this.paneInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneInfo.Location = new System.Drawing.Point(0, 62);
@@ -300,22 +292,33 @@
             this.status.AutoSize = true;
             this.status.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.status.ForeColor = System.Drawing.Color.SlateGray;
-            this.status.Location = new System.Drawing.Point(99, 40);
+            this.status.Location = new System.Drawing.Point(49, 34);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(38, 13);
             this.status.TabIndex = 6;
             this.status.Text = "Online";
             // 
-            // txtUser
+            // txtUsername
             // 
-            this.txtUser.AutoSize = true;
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.ForeColor = System.Drawing.Color.White;
-            this.txtUser.Location = new System.Drawing.Point(99, 11);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(67, 17);
-            this.txtUser.TabIndex = 5;
-            this.txtUser.Text = "Username";
+            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsername.DefaultText = "";
+            this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUsername.DisabledState.Parent = this.txtUsername;
+            this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsername.FocusedState.Parent = this.txtUsername;
+            this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsername.HoverState.Parent = this.txtUsername;
+            this.txtUsername.Location = new System.Drawing.Point(49, 11);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.PlaceholderText = "";
+            this.txtUsername.SelectedText = "";
+            this.txtUsername.ShadowDecoration.Parent = this.txtUsername;
+            this.txtUsername.Size = new System.Drawing.Size(152, 13);
+            this.txtUsername.TabIndex = 7;
             // 
             // ChatForm
             // 
@@ -329,7 +332,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChatForm";
             this.Text = "ChatForm";
-            this.Shown += new System.EventHandler(this.ChatForm_Shown);
             this.panInfoConnection.ResumeLayout(false);
             this.panInfoConnection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPortHost)).EndInit();
@@ -354,14 +356,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtmessage;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Panel panContainer;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel paneInfo;
         private System.Windows.Forms.Label status;
-        private System.Windows.Forms.Label txtUser;
         private Guna.UI2.WinForms.Guna2TextBox txtServerIP;
         private System.Windows.Forms.Label lblPort;
         private Guna.UI2.WinForms.Guna2Button btnCon;
         private Guna.UI2.WinForms.Guna2NumericUpDown numPortHost;
         private System.Windows.Forms.Label lblStatus;
+        private Guna.UI2.WinForms.Guna2TextBox txtUsername;
     }
 }

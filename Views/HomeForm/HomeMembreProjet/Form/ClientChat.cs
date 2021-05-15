@@ -70,11 +70,7 @@ namespace Views.HomeForm.HomeMembreProjet.Form
 
         private void Txtmessage_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // if the Enter touch is clicked
-            if (e.KeyChar == (char) 13)
-            {
-                sendMessage();
-            }
+           
         }
 
         private void InitializeConnection()
@@ -167,14 +163,14 @@ namespace Views.HomeForm.HomeMembreProjet.Form
                 })));
             }
 
-            // tout en etant connecte aux lignes qui arrievent du serveur
+            // tout en etant connecte aux lignes qui arrivent du serveur
             try
             {
-                while (isConnected)
-                {
-                    //show message in textbox
-                    this.Invoke(new actualizeLogCallback(this.actualizeLog), new object[] {srRecepteur.ReadLine()});
-                }
+                //while (isConnected)
+                //{
+                //    //show message in textbox
+                //    this.Invoke(new actualizeLogCallback(this.actualizeLog), new object[] {srRecepteur.ReadLine()});
+                //}
             }
             catch
             {
@@ -184,7 +180,8 @@ namespace Views.HomeForm.HomeMembreProjet.Form
 
         private void actualizeLog(string strMessage)
         {
-            txtLog.AppendText(strMessage + "\r\n");
+            //txtLog.AppendText(strMessage + "\r\n");
+
         }
 
         private void sendMessage()
@@ -213,7 +210,8 @@ namespace Views.HomeForm.HomeMembreProjet.Form
         {
             // close connection with server
             //
-            txtLog.AppendText(mess + "\r\n");
+            //txtLog.AppendText(mess + "\r\n");
+            txtUser.AppendText(mess);
             //activate or deactivate controls
             txtServerIP.Enabled = true;
             numPortHost.Enabled = true;
@@ -221,6 +219,7 @@ namespace Views.HomeForm.HomeMembreProjet.Form
 
             txtmessage.Enabled = false;
             btnSend.Enabled = false;
+            btnCon.ForeColor = Color.Aqua;
             btnCon.Text = "Connecter";
 
             //fermer tout

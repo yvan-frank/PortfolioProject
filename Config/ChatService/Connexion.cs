@@ -97,7 +97,7 @@ namespace Config.ChatService
                     else
                     {
                         //send message for all users
-                        Server.envoyerMessage(userActual, strResponse);
+                        Server.EnvoyerMessage(userActual, strResponse);
 
                     }
                 }

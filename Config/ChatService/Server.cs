@@ -53,7 +53,7 @@ namespace Config.ChatService
             Server.htConnexion.Add(tcpUser, strUsername);
 
             //informe la nouvelle connexion pour tous les user et pour les formulaire du server
-            envoyerMessageAdmin(htConnexion[tcpUser] + " is enter...");
+            EnvoyerMessageAdmin(htConnexion[tcpUser] + " is enter...");
         }
 
         public static void removeUser(TcpClient tcpUser)
@@ -62,7 +62,7 @@ namespace Config.ChatService
             if (htConnexion[tcpUser] != null)
             {
                 //affiche d'abord les informations et informe les autres users de la connexion
-                envoyerMessageAdmin(htConnexion[tcpUser] + " out...");
+                EnvoyerMessageAdmin(htConnexion[tcpUser] + " out...");
 
                 //remove user from hashtable
                 Server.htUsers.Remove(Server.htConnexion[tcpUser]);
@@ -83,7 +83,7 @@ namespace Config.ChatService
         }
 
         // envoi de message adminstrateur
-        public static void envoyerMessageAdmin(string message)
+        public static void EnvoyerMessageAdmin(string message)
         {
             StreamWriter streamWriterSender;
             e = new StatusChangedEventArgs("Administrator: " + message);
@@ -122,7 +122,7 @@ namespace Config.ChatService
         }
 
         //envoie de message dun user pour tous les autres
-        public static void envoyerMessage(string origine, string message)
+        public static void EnvoyerMessage(string origine, string message)
         {
             StreamWriter streamWriterSender;
 
@@ -185,7 +185,7 @@ namespace Config.ChatService
                 threadListener.Start();
 
             }
-            catch (Exception exception)
+            catch
             {
                 //MessageBox.Show("echec to initialize the connection " + exception.Message);
             }

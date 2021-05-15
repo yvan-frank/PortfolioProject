@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
+using Views.HomeForm.HomeMembreProjet.Form;
 
 namespace Views
 {
@@ -19,9 +20,9 @@ namespace Views
 
         private TcpClient tcpServer;
         //a necessary method to actualize the form with message
-        private delegate void actualizeLogCallback(string strMessage);
+        private delegate void ActualizeLogCallback(string strMessage);
         //necessary to define the form for the state "Disconnected" from other Thread
-        private delegate void closeConnectionCallBack(string strReason);
+        private delegate void CloseConnectionCallBack(string strReason);
 
         private Thread msgThread;
         private IPAddress addressIp;
@@ -35,6 +36,8 @@ namespace Views
 
         public ChatForm()
         {
+            // Exiting the app : disconnected
+            Application.ApplicationExit += new EventHandler(onApplicationExit);
             InitializeComponent();
         }
 
@@ -56,12 +59,12 @@ namespace Views
                 isConnected = true;
 
                 //prepare a form
-                username = txtUser.Text;
+                username = txtUsername.Text;
 
                 // desactivate or activate les champs
                 txtServerIP.Enabled = false;
                 numPortHost.Enabled = false;
-                txtUser.Enabled = false;
+                txtUsername.Enabled = false;
 
                 txtmessage.Enabled = true;
                 btnSend.Enabled = true;
@@ -71,7 +74,7 @@ namespace Views
 
                 //envoi du nom au server
                 swExpediteur = new StreamWriter(tcpServer.GetStream());
-                swExpediteur.WriteLine(txtUser.Text);
+                swExpediteur.WriteLine(txtUsername.Text);
                 swExpediteur.Flush();
 
                 //init the Thread to receive a message
@@ -104,74 +107,13 @@ namespace Views
 
         private void BtnSend_Click(object sender, EventArgs e)
         {
-            Send();
+            sendMessage();
         }
-
-        void Send()
-        {
-            if (txtmessage.Text.Trim().Length == 0) return;
-            MessageSortant(txtmessage.Text);
-            txtmessage.Text = string.Empty;
-
-            //get random message
-            status.Text = $"Entrain d' écrire";
-            //timer1.Start();
-        }
-
-        // private int cvrTop = 10;
-
+     
 
         #region Message entrant
-        void MessageEntrant(string message)
-        {
-            try
-            {
-                srRecepteur = new StreamReader(tcpServer.GetStream());
-                string conResponse = srRecepteur.ReadLine();
 
-                //if the first character of the response is 1, then the connection is established
-                if (conResponse[0] == '1')
-                {
 
-                    //actualize the form
-                    MessageBox.Show("Connection successful");
-                }
-                else
-                {
-                    string reason = "No connected: ";
-
-                    //extraction the reason of failure
-                    reason += conResponse.Substring(2, conResponse.Length - 2);
-                    //actualize the form
-                    MessageBox.Show(reason);
-                    return;
-                }
-            }
-            catch
-            {
-                lblStatus.Invoke(new Action((() =>
-                {
-                    lblStatus.ForeColor = Color.Red;
-                    lblStatus.Text = "Non connecté \n";
-                })));
-            }
-
-            while (isConnected)
-            {
-                var bubble = new Controls.MessageEntrant();
-                panContainer.Controls.Add(bubble);
-                //bubble.Top = cvrTop;//
-                bubble.BringToFront();
-                //bubble.Width = panContainer.Width - 10;//
-                bubble.Dock = DockStyle.Top;
-                bubble.Message = message;
-                // cvrTop += bubble.Height;//
-
-                msgThread = new Thread(new ThreadStart(ReceivedMessage));
-                msgThread.IsBackground = true;
-                msgThread.Start();
-            }
-        }
         private void ReceivedMessage()
         {
             //receive message from server
@@ -213,7 +155,8 @@ namespace Views
                 while (isConnected)
                 {
                     //show message in textbox
-                    this.Invoke(new actualizeLogCallback(this.actualizeLog), new object[] { srRecepteur.ReadLine() });
+                    this.Invoke(new ActualizeLogCallback(this.ActualizeLogReceiveMessage), new object[] { srRecepteur.ReadLine() });
+
                 }
             }
             catch
@@ -222,22 +165,22 @@ namespace Views
             }
         }
 
+        private void ActualizeLogReceiveMessage(string strmessage)
+        {
+            var bubble = new Controls.MessageEntrant();
+            panContainer.Controls.Add(bubble);
+            //bubble.Top = cvrTop;//
+            bubble.BringToFront();
+            //bubble.Width = panContainer.Width - 10;//
+            bubble.Dock = DockStyle.Top;
+            bubble.Message = strmessage;
+            // cvrTop += bubble.Height;//
+        }
+
         #endregion
 
 
         #region Message sortant
-        void MessageSortant(string message)
-        {
-            var bubble = new Controls.MessageSortant();
-            panContainer.Controls.Add(bubble);
-            //bubble.Top = cvrTop;//
-            bubble.BringToFront();
-            //bubble.Width = panContainer.Width - 20;//
-            bubble.Dock = DockStyle.Top;
-            bubble.Message = message;
-            //cvrTop += bubble.Height;//
-        }
-
 
         private void sendMessage()
         {
@@ -247,23 +190,29 @@ namespace Views
                 {
                     swExpediteur.WriteLine(txtmessage.Text);
                     swExpediteur.Flush();
-                    txtmessage.Lines = null;
+                    //txtmessage.Lines = null;
 
-                    this.Invoke(new actualizeLogCallback(actualizeLog), new object[] { txtmessage.Text });
+                    this.Invoke(new ActualizeLogCallback(ActualizeLogSendMessage), new object[] { txtmessage.Text });
                 }
 
                 txtmessage.Text = "";
             }
             catch
             {
-                this.Invoke(new actualizeLogCallback(actualizeLog),
+                this.Invoke(new ActualizeLogCallback(ActualizeLogSendMessage),
                     new object[] { "Le serveur a été désactivé par l'administrateur" });
             }
         }
 
-        private void actualizeLog(string strmessage)
-        {
 
+        //log message sortant
+        private void ActualizeLogSendMessage(string mess)
+        {
+            var bubble = new Controls.MessageSortant();
+            panContainer.Controls.Add(bubble);
+            bubble.BringToFront();
+            bubble.Dock = DockStyle.Top;
+            bubble.Message = mess;
         }
 
         #endregion
@@ -277,7 +226,7 @@ namespace Views
             //activate or deactivate controls
             txtServerIP.Enabled = true;
             numPortHost.Enabled = true;
-            txtUser.Enabled = true;
+            txtUsername.Enabled = true;
 
             txtmessage.Enabled = false;
             btnSend.Enabled = false;
@@ -292,7 +241,7 @@ namespace Views
             lblStatus.Invoke(new Action((() =>
             {
                 lblStatus.ForeColor = Color.DarkGreen;
-                lblStatus.Text = $"Disconnected to Chat Server {addressIp} : {portHost}";
+                lblStatus.Text = $"Disconnected to Chat Server {addressIp} : {portHost}" + mess;
             })));
         }
 
@@ -309,45 +258,20 @@ namespace Views
         }
 
 
-
-
-
-
-
-
-
-
-
         private void TxtMessage_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return)
             {
-                Send();
+                sendMessage();
             }
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            lblStatus.Text = "En ligne";
-            //sample response
-            MessageEntrant("Desole je ne peux te communiquer maintenant");
-        }
-
-        private void ChatForm_Shown(object sender, EventArgs e)
-        {
-            MessageEntrant("Hello " + Environment.UserName + " ,pose moi une question :).");
-        }
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void LblStatus_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnCon_Click(object sender, EventArgs e)
         {
