@@ -247,5 +247,10 @@ namespace Views.HomeForm.HomeMembreProjet.Form
                 tcpServer.Close();
             }
         }
+
+        private void ClientChat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

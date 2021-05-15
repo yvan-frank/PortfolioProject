@@ -141,7 +141,7 @@
             this.txtLog.Size = new System.Drawing.Size(364, 269);
             this.txtLog.TabIndex = 10;
             // 
-            // Form1
+            // ClientChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,8 +154,9 @@
             this.Controls.Add(this.numPortHost);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.txtServerIP);
-            this.Name = "Form1";
+            this.Name = "ClientChat";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ClientChat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPortHost)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
