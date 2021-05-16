@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>C:\Users\Frank tout court\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>C:\Users\Frank tout court\Downloads\Guna.UI\Guna.UI.dll</HintPath>
     </Reference>
@@ -51,6 +54,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,6 +74,12 @@
       <DependentUpon>ChatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Chat\Utiles.cs" />
+    <Compile Include="Controls\CardUserShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CardUserShow.Designer.cs">
+      <DependentUpon>CardUserShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LoadingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +109,12 @@
     </Compile>
     <Compile Include="HomeForm\HomeAdmin\ConfigServer\ServerForm.designer.cs">
       <DependentUpon>ServerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\FormAdmin\UserGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\FormAdmin\UserGroup.Designer.cs">
+      <DependentUpon>UserGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm\HomeAdmin\HomeAdministrator.cs">
       <SubType>Form</SubType>
@@ -141,6 +157,9 @@
     <EmbeddedResource Include="ChatForm.resx">
       <DependentUpon>ChatForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CardUserShow.resx">
+      <DependentUpon>CardUserShow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\LoadingControl.resx">
       <DependentUpon>LoadingControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm\HomeAdmin\ConfigServer\ServerForm.resx">
       <DependentUpon>ServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm\HomeAdmin\FormAdmin\UserGroup.resx">
+      <DependentUpon>UserGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm\HomeAdmin\HomeAdministrator.resx">
       <DependentUpon>HomeAdministrator.cs</DependentUpon>
@@ -228,6 +250,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_telegram_app_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_chat_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_login_rounded_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_todo_list_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_topic_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settingsblanc_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_groups.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_groups_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_training_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_groupsbig_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trainingbig_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_user_group_man_man_filled_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_home_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

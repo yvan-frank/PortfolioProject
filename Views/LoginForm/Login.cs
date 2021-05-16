@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Views.HomeForm.HomeAdmin;
 
 namespace Views.LoginForm
 {
@@ -24,9 +26,18 @@ namespace Views.LoginForm
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-
-            loadingControl1.Visible = true;
-            etatFormLogin();
+            if (txtUsername.Text == "vans" && txtPassword.Text == "vans")
+            {
+                timer1.Start();
+                loadingControl1.Visible = true;
+                etatFormLogin();
+            }
+            else
+            {
+                loadingControl1.Visible = false;
+                btnLogin.Visible = true;
+            }
+            
         }
 
 
@@ -75,6 +86,23 @@ namespace Views.LoginForm
             if (txtPassword.Text != string.Empty)
             {
                 txtPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            if (progressBar1.Value <= 99)
+            {
+                progressBar1.Value += 2;
+            }
+
+            if (progressBar1.Value == 100)
+            {
+                timer1.Stop();
+                Thread.Sleep(200);
+                HomeAdministrator homeAdministrator = new HomeAdministrator();
+                homeAdministrator.Show();
+                this.Hide();
             }
         }
     }

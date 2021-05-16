@@ -44,8 +44,8 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.panContainer = new System.Windows.Forms.Panel();
             this.paneInfo = new System.Windows.Forms.Panel();
-            this.status = new System.Windows.Forms.Label();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.status = new System.Windows.Forms.Label();
             this.panInfoConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPortHost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -274,6 +274,7 @@
             this.panContainer.Name = "panContainer";
             this.panContainer.Size = new System.Drawing.Size(517, 295);
             this.panContainer.TabIndex = 2;
+            this.panContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.PanContainer_Paint);
             // 
             // paneInfo
             // 
@@ -286,17 +287,6 @@
             this.paneInfo.Name = "paneInfo";
             this.paneInfo.Size = new System.Drawing.Size(523, 62);
             this.paneInfo.TabIndex = 7;
-            // 
-            // status
-            // 
-            this.status.AutoSize = true;
-            this.status.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status.ForeColor = System.Drawing.Color.SlateGray;
-            this.status.Location = new System.Drawing.Point(49, 34);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(38, 13);
-            this.status.TabIndex = 6;
-            this.status.Text = "Online";
             // 
             // txtUsername
             // 
@@ -319,6 +309,17 @@
             this.txtUsername.ShadowDecoration.Parent = this.txtUsername;
             this.txtUsername.Size = new System.Drawing.Size(152, 13);
             this.txtUsername.TabIndex = 7;
+            // 
+            // status
+            // 
+            this.status.AutoSize = true;
+            this.status.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.ForeColor = System.Drawing.Color.SlateGray;
+            this.status.Location = new System.Drawing.Point(49, 34);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(38, 13);
+            this.status.TabIndex = 6;
+            this.status.Text = "Online";
             // 
             // ChatForm
             // 
