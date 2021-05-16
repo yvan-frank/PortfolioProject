@@ -286,5 +286,10 @@ namespace Views
                 closeConnection("Disconnected for user asking");
             }
         }
+
+        private void PanContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

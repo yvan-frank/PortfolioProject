@@ -84,3 +84,6 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.Controls.Me
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.Controls.MessageEntrant.resources
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.HomeAdmin.ServerForm.resources
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.HomeMembreProjet.Form.ClientChat.resources
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.HomeAdmin.FormAdmin.UserGroup.resources
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Bunifu_UI_v1.52.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.Controls.CardUserShow.resources
