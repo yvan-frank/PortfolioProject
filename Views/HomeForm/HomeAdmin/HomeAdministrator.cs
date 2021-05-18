@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Views.HomeForm.HomeAdmin.FormAdmin;
-using Views.HomeForm.HomeMembreProjet.Form;
-
 namespace Views.HomeForm.HomeAdmin
 {
     public partial class HomeAdministrator : Form
     {
-        private delegate void ActualizseLog(EventArgs e);
+        
         public HomeAdministrator()
         {
             InitializeComponent();
@@ -47,7 +38,7 @@ namespace Views.HomeForm.HomeAdmin
         private void BtnGestUsers_Click(object sender, EventArgs e)
         {
             OnChildForm(new UserGroup());
-            LabelStatus("Gestion d'utilisateur");
+            LabelStatus("Gérer vos utilisateurs");
         }
 
         private void LabelStatus(string comment)
@@ -64,8 +55,17 @@ namespace Views.HomeForm.HomeAdmin
         private void BtnHome_Click(object sender, EventArgs e)
         {
             panelContainer.Controls.Clear();
-            LabelStatus("Accueil");
+            LabelStatus("Vous êtes à l'accueil  :)");
         }
 
+        private void BtnDeconnexion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void BtnFermer_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

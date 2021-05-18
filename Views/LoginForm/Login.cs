@@ -14,6 +14,7 @@ namespace Views.LoginForm
 {
     public partial class Login : Form
     {
+        HomeAdministrator homeAdministrator = new HomeAdministrator();
         public Login()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Views.LoginForm
                 timer1.Start();
                 loadingControl1.Visible = true;
                 etatFormLogin();
+                homeAdministrator.FormClosed += Logout;
             }
             else
             {
@@ -38,6 +40,13 @@ namespace Views.LoginForm
                 btnLogin.Visible = true;
             }
             
+        }
+
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+            this.Show();
         }
 
 
@@ -100,7 +109,7 @@ namespace Views.LoginForm
             {
                 timer1.Stop();
                 Thread.Sleep(200);
-                HomeAdministrator homeAdministrator = new HomeAdministrator();
+               
                 homeAdministrator.Show();
                 this.Hide();
             }

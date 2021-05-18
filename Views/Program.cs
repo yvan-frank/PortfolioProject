@@ -22,7 +22,7 @@ namespace Views
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeAdministrator());
+            Application.Run(new SplashScreen());
         }
     }
 }

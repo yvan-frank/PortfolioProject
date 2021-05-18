@@ -87,3 +87,6 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.Ho
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.HomeForm.HomeAdmin.FormAdmin.UserGroup.resources
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Bunifu_UI_v1.52.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.Controls.CardUserShow.resources
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Models.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\MySql.Data.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Models.pdb
