@@ -16,3 +16,4 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Models\obj\Debug\Models.csproj.Co
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Models\obj\Debug\Models.csproj.CopyComplete
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Models\obj\Debug\Models.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Models\obj\Debug\Models.pdb
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Models\bin\Debug\MySql.Data.dll

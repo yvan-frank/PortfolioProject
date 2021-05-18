@@ -11,3 +11,4 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Common\obj\Debug\Common.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Common\obj\Debug\Common.pdb
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Common\bin\Debug\Guna.UI2.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Common\obj\Debug\Common.csproj.CopyComplete
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Common\obj\Debug\Common.csprojAssemblyReference.cache

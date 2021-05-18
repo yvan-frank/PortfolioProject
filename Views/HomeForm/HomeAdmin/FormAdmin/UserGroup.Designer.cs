@@ -34,9 +34,6 @@
             this.tabControlUser = new MetroFramework.Controls.MetroTabControl();
             this.tabViewuser = new System.Windows.Forms.TabPage();
             this.panContenUser = new System.Windows.Forms.Panel();
-            this.cardUserShow3 = new Views.Controls.CardUserShow();
-            this.cardUserShow2 = new Views.Controls.CardUserShow();
-            this.cardUserShow1 = new Views.Controls.CardUserShow();
             this.tabAdd = new System.Windows.Forms.TabPage();
             this.panContentAddUser = new System.Windows.Forms.Panel();
             this.txtIdenti = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,16 +41,16 @@
             this.txtAdress = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelShowSucess = new System.Windows.Forms.Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.txterror = new Guna.UI2.WinForms.Guna2Button();
             this.txtTel = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTel = new System.Windows.Forms.Label();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.txtMdp = new System.Windows.Forms.Label();
             this.lblMdp = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtProfil = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblProfil = new System.Windows.Forms.Label();
             this.txtFonction = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblFonction = new System.Windows.Forms.Label();
@@ -99,6 +96,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.cardUserShow3 = new Views.Controls.CardUserShow();
+            this.cardUserShow2 = new Views.Controls.CardUserShow();
+            this.cardUserShow1 = new Views.Controls.CardUserShow();
             this.tabControlUser.SuspendLayout();
             this.tabViewuser.SuspendLayout();
             this.panContenUser.SuspendLayout();
@@ -125,7 +125,7 @@
             this.tabControlUser.Location = new System.Drawing.Point(0, 0);
             this.tabControlUser.Name = "tabControlUser";
             this.tabControlUser.RightToLeftLayout = true;
-            this.tabControlUser.SelectedIndex = 0;
+            this.tabControlUser.SelectedIndex = 1;
             this.tabControlUser.ShowToolTips = true;
             this.tabControlUser.Size = new System.Drawing.Size(840, 495);
             this.tabControlUser.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
@@ -159,32 +159,6 @@
             this.panContenUser.Size = new System.Drawing.Size(828, 440);
             this.panContenUser.TabIndex = 0;
             // 
-            // cardUserShow3
-            // 
-            this.cardUserShow3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardUserShow3.Location = new System.Drawing.Point(623, 38);
-            this.cardUserShow3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cardUserShow3.Name = "cardUserShow3";
-            this.cardUserShow3.Size = new System.Drawing.Size(199, 249);
-            this.cardUserShow3.TabIndex = 2;
-            // 
-            // cardUserShow2
-            // 
-            this.cardUserShow2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cardUserShow2.Location = new System.Drawing.Point(318, 38);
-            this.cardUserShow2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cardUserShow2.Name = "cardUserShow2";
-            this.cardUserShow2.Size = new System.Drawing.Size(199, 249);
-            this.cardUserShow2.TabIndex = 1;
-            // 
-            // cardUserShow1
-            // 
-            this.cardUserShow1.Location = new System.Drawing.Point(25, 38);
-            this.cardUserShow1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cardUserShow1.Name = "cardUserShow1";
-            this.cardUserShow1.Size = new System.Drawing.Size(171, 249);
-            this.cardUserShow1.TabIndex = 0;
-            // 
             // tabAdd
             // 
             this.tabAdd.Controls.Add(this.panContentAddUser);
@@ -209,9 +183,9 @@
             this.panContentAddUser.Controls.Add(this.guna2ShadowPanel1);
             this.panContentAddUser.Controls.Add(this.txtMdp);
             this.panContentAddUser.Controls.Add(this.lblMdp);
-            this.panContentAddUser.Controls.Add(this.guna2TextBox1);
+            this.panContentAddUser.Controls.Add(this.txtEmail);
             this.panContentAddUser.Controls.Add(this.lblEmail);
-            this.panContentAddUser.Controls.Add(this.guna2ComboBox1);
+            this.panContentAddUser.Controls.Add(this.txtProfil);
             this.panContentAddUser.Controls.Add(this.lblProfil);
             this.panContentAddUser.Controls.Add(this.txtFonction);
             this.panContentAddUser.Controls.Add(this.lblFonction);
@@ -300,32 +274,33 @@
             // 
             // panelShowSucess
             // 
-            this.panelShowSucess.Controls.Add(this.guna2Button3);
+            this.panelShowSucess.Controls.Add(this.txterror);
             this.panelShowSucess.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelShowSucess.Location = new System.Drawing.Point(0, 353);
             this.panelShowSucess.Name = "panelShowSucess";
             this.panelShowSucess.Size = new System.Drawing.Size(832, 91);
             this.panelShowSucess.TabIndex = 18;
             // 
-            // guna2Button3
+            // txterror
             // 
-            this.guna2Button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txterror.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderRadius = 5;
-            this.guna2Button3.BorderThickness = 1;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(69, 22);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(700, 45);
-            this.guna2Button3.TabIndex = 3;
-            this.guna2Button3.Text = "Les identifiants ont été bien send";
+            this.txterror.BackColor = System.Drawing.Color.Transparent;
+            this.txterror.BorderRadius = 5;
+            this.txterror.BorderThickness = 1;
+            this.txterror.CheckedState.Parent = this.txterror;
+            this.txterror.CustomImages.Parent = this.txterror;
+            this.txterror.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txterror.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txterror.ForeColor = System.Drawing.Color.Black;
+            this.txterror.HoverState.Parent = this.txterror;
+            this.txterror.Location = new System.Drawing.Point(69, 22);
+            this.txterror.Name = "txterror";
+            this.txterror.ShadowDecoration.Parent = this.txterror;
+            this.txterror.Size = new System.Drawing.Size(700, 45);
+            this.txterror.TabIndex = 3;
+            this.txterror.Text = "Les identifiants ont été bien send";
+            this.txterror.Visible = false;
             // 
             // txtTel
             // 
@@ -393,9 +368,9 @@
             this.txtMdp.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.txtMdp.Location = new System.Drawing.Point(615, 276);
             this.txtMdp.Name = "txtMdp";
-            this.txtMdp.Size = new System.Drawing.Size(213, 15);
+            this.txtMdp.Size = new System.Drawing.Size(30, 15);
             this.txtMdp.TabIndex = 13;
-            this.txtMdp.Text = "Mot de passe généré automatiquement";
+            this.txtMdp.Text = "couc";
             // 
             // lblMdp
             // 
@@ -408,30 +383,30 @@
             this.lblMdp.TabIndex = 12;
             this.lblMdp.Text = "Mot de passe";
             // 
-            // guna2TextBox1
+            // txtEmail
             // 
-            this.guna2TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(329, 197);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox1.TabIndex = 11;
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.Parent = this.txtEmail;
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.FocusedState.Parent = this.txtEmail;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.HoverState.Parent = this.txtEmail;
+            this.txtEmail.Location = new System.Drawing.Point(329, 197);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
+            this.txtEmail.Size = new System.Drawing.Size(200, 36);
+            this.txtEmail.TabIndex = 11;
             // 
             // lblEmail
             // 
@@ -444,24 +419,27 @@
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email";
             // 
-            // guna2ComboBox1
+            // txtProfil
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.FormattingEnabled = true;
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(33, 197);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(200, 36);
-            this.guna2ComboBox1.TabIndex = 9;
+            this.txtProfil.BackColor = System.Drawing.Color.Transparent;
+            this.txtProfil.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtProfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtProfil.FocusedColor = System.Drawing.Color.Empty;
+            this.txtProfil.FocusedState.Parent = this.txtProfil;
+            this.txtProfil.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtProfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.txtProfil.FormattingEnabled = true;
+            this.txtProfil.HoverState.Parent = this.txtProfil;
+            this.txtProfil.ItemHeight = 30;
+            this.txtProfil.Items.AddRange(new object[] {
+            "Chef de projet",
+            "Membre"});
+            this.txtProfil.ItemsAppearance.Parent = this.txtProfil;
+            this.txtProfil.Location = new System.Drawing.Point(33, 197);
+            this.txtProfil.Name = "txtProfil";
+            this.txtProfil.ShadowDecoration.Parent = this.txtProfil;
+            this.txtProfil.Size = new System.Drawing.Size(200, 36);
+            this.txtProfil.TabIndex = 9;
             // 
             // lblProfil
             // 
@@ -606,6 +584,7 @@
             this.btnSave.Size = new System.Drawing.Size(241, 45);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Créer et envoyer les identifiants par mail";
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnAnnuler
             // 
@@ -1149,6 +1128,32 @@
             this.guna2Button4.TabIndex = 1;
             this.guna2Button4.Text = "Annuler";
             // 
+            // cardUserShow3
+            // 
+            this.cardUserShow3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardUserShow3.Location = new System.Drawing.Point(623, 38);
+            this.cardUserShow3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cardUserShow3.Name = "cardUserShow3";
+            this.cardUserShow3.Size = new System.Drawing.Size(199, 249);
+            this.cardUserShow3.TabIndex = 2;
+            // 
+            // cardUserShow2
+            // 
+            this.cardUserShow2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cardUserShow2.Location = new System.Drawing.Point(318, 38);
+            this.cardUserShow2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cardUserShow2.Name = "cardUserShow2";
+            this.cardUserShow2.Size = new System.Drawing.Size(199, 249);
+            this.cardUserShow2.TabIndex = 1;
+            // 
+            // cardUserShow1
+            // 
+            this.cardUserShow1.Location = new System.Drawing.Point(25, 38);
+            this.cardUserShow1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cardUserShow1.Name = "cardUserShow1";
+            this.cardUserShow1.Size = new System.Drawing.Size(171, 249);
+            this.cardUserShow1.TabIndex = 0;
+            // 
             // UserGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1195,9 +1200,9 @@
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label txtMdp;
         private System.Windows.Forms.Label lblMdp;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox txtProfil;
         private System.Windows.Forms.Label lblProfil;
         private Guna.UI2.WinForms.Guna2TextBox txtFonction;
         private System.Windows.Forms.Label lblFonction;
@@ -1208,7 +1213,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTel;
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.Panel panelShowSucess;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button txterror;
         private Guna.UI2.WinForms.Guna2TextBox txtIdenti;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtAdress;

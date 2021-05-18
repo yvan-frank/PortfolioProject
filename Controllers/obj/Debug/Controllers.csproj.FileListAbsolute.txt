@@ -20,3 +20,4 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers.csproj.CopyComplete
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers.pdb
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\MySql.Data.dll
