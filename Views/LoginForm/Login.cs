@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controllers.Admin;
+using Views.Controls.AlertControl;
 using Views.HomeForm.HomeAdmin;
 
 namespace Views.LoginForm
@@ -15,6 +11,7 @@ namespace Views.LoginForm
     public partial class Login : Form
     {
         HomeAdministrator homeAdministrator = new HomeAdministrator();
+        private AdminController adnAdminController = new AdminController();
         public Login()
         {
             InitializeComponent();
@@ -27,38 +24,59 @@ namespace Views.LoginForm
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "vans" && txtPassword.Text == "vans")
+
+            if (txtUsername.Text != string.Empty && txtPassword.Text != string.Empty)
             {
-                timer1.Start();
-                loadingControl1.Visible = true;
-                etatFormLogin();
-                homeAdministrator.FormClosed += Logout;
+                var isLogin = adnAdminController.LoginAdmin(txtUsername.Text, txtPassword.Text);
+                if (isLogin)
+                {
+                    timer1.Start();
+                    pg.Visible = true;
+                    pg.AutoStart = true;
+                    EtatFormLogin();
+                    AlertBox.Show("Connexion reussie!\t:)", AlertBox.AlertType.Success);
+                    homeAdministrator.FormClosed += Logout;
+                }
+                else
+                {
+                   AlertBox.Show("Impossible d'acceder a votre compte, \n Veuillez reessayer", AlertBox.AlertType.Warning);
+                }
             }
             else
             {
-                loadingControl1.Visible = false;
+                pg.Visible = false;
                 btnLogin.Visible = true;
             }
+           
             
         }
-
+        //message essor\
+        //private void MsgErro(string error)
+        //{
+        //    lblError.Text = error;
+        //    lblError.Visible = true;
+        //}
         private void Logout(object sender, FormClosedEventArgs e)
         {
             txtUsername.Clear();
             txtPassword.Clear();
+            txtUsername.Focus();
+            pg.Visible = false;
+            btnLogin.Enabled = true;
+            timer1.Stop();
             this.Show();
         }
 
 
-        private void etatFormLogin()
+        private void EtatFormLogin()
         {
             
-            btnLogin.Visible = false;
+            btnLogin.Enabled = false;
         }
 
         private void TxtUsername_Enter(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "Username")
+            if (txtUsername.Text == "Pseudo")
             {
                 txtUsername.Text = "";
                 txtUsername.ForeColor = Color.Black;
@@ -69,13 +87,13 @@ namespace Views.LoginForm
         {
             if (txtUsername.Text == string.Empty)
             {
-                txtUsername.Text = "Username";
+                txtUsername.Text = "Pseudo";
             }
         }
 
         private void TxtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "Password")
+            if (txtPassword.Text == "Mot de passe")
             {
                 txtPassword.Text = string.Empty;
             }
@@ -85,7 +103,7 @@ namespace Views.LoginForm
         {
             if (txtPassword.Text == string.Empty)
             {
-                txtPassword.Text = "Password";
+                txtPassword.Text = "Mot de passe";
                 txtPassword.UseSystemPasswordChar = false;
             }
         }
@@ -108,11 +126,14 @@ namespace Views.LoginForm
             if (progressBar1.Value == 100)
             {
                 timer1.Stop();
-                Thread.Sleep(200);
-               
                 homeAdministrator.Show();
                 this.Hide();
             }
+        }
+
+        private void Btnfermer_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

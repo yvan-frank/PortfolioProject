@@ -90,3 +90,5 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.Controls.Ca
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Models.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\MySql.Data.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\bin\Debug\Models.pdb
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.Controls.AlertControl.AlertBox.resources
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Views\obj\Debug\Views.Controls.AlertControl.MessageBoxCustom.resources

@@ -60,12 +60,19 @@ namespace Views.HomeForm.HomeAdmin
 
         private void BtnDeconnexion_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (MessageBox.Show("Voulez vraiment sortir?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void BtnFermer_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnGesProjet_Click(object sender, EventArgs e)
+        {
         }
     }
 }

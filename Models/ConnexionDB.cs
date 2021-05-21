@@ -9,17 +9,17 @@ namespace Models
         private string username = "root";
         private string password = "";
 
-        private readonly string chaineConnection;
+        private readonly string _chaineConnection;
 
         public ConnexionDb()
         {
-            chaineConnection = "Server=" + host + ";Database=" + database + ";port=" + port + ";User id=" + username +
+            _chaineConnection = "Server=" + host + ";Database=" + database + ";port=" + port + ";User id=" + username +
                                ";password=" + password;
         }
 
         public MySqlConnection GetConnection()
         {
-            return new MySqlConnection(chaineConnection);
+            return new MySqlConnection(_chaineConnection);
         }
     }
 }

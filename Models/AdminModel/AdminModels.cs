@@ -1,40 +1,28 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Runtime.ConstrainedExecution;
 using MySql.Data.MySqlClient;
-using System.Drawing;
-using System.Net.Http.Headers;
-using System.Runtime.InteropServices;
-using System.Xml;
-
 namespace Models.AdminModel
 {
     
-    public class AdminModels:Utilisateur
+    public class AdminModels
     {
         private ConnexionDb con = new ConnexionDb();
+        private MySqlCommand command = new MySqlCommand();
         //create user
         public void AddUser(string nom, string prenom, string email, int telephone, string adresse, string login,
             string password, int typeUser)
         {
-            //this.SetNom(nom);
-            //this.SetPrenom(prenom);
-            //this.SetEmail(email);
-            //this.SetTelephone(telephone);
-            //this.SetAdresse(adresse);
-            //this.SetLogin(login);
-            //this.SetPassword(password);
             try
             {
                 string sql =
-                    "insert into utilisateur (nom,prenom, mail, telephone, adresse, login, mdp, type_id) values('" +
+                    "insert into utilisateur (nom, prenom, mail, telephone, adresse, login, mdp, user_type_id ) values('" +
                     nom + "', '" + prenom + "', '" + email + "', '" + telephone + "','" + adresse + "','" + login +
                     "', '" + password + "','" + typeUser + "')";
                 using (var connection = con.GetConnection())
                 {
                     connection.Open();
 
-                    using (var command = new MySqlCommand())
+                    using (command)
                     {
                         command.Connection = connection;
                         command.CommandText = sql;
@@ -46,35 +34,95 @@ namespace Models.AdminModel
             }
             catch
             {
-               
+               //
             }
         }
 
-        public bool Login(string login, string password)
+        public bool AddToUser(string login,string email, string password)
         {
-            string sql = "select * from admin where login=@login and mdp=@password";
-            using (var connect = con.GetConnection())
+            string sql =
+                "insert into memebre (login,email mdp) values('" + login + "', '" + email + "','" + password + "')";
+            int row;
+            try
             {
-                connect.Open();
-                using (var com = new MySqlCommand())
+                using (var connection = con.GetConnection())
                 {
-                    com.Connection = connect;
-                    com.CommandText = sql;
-                    com.Parameters.AddWithValue("@login", login);
-                    com.Parameters.AddWithValue("@password", password);
-                    com.CommandType = CommandType.Text;
+                    connection.Open();
 
-                    MySqlDataReader reader = com.ExecuteReader();
-                    if (reader.HasRows)
+                    using (command)
                     {
-                        return true;
+                        command.Connection = connection;
+                        command.CommandText = sql;
+                        command.CommandType = CommandType.Text;
+                        row = command.ExecuteNonQuery();
                     }
-                    else
-                    {
-                        return false;
-                    }
+
+                }
+
+                if (row > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
+            catch
+            {
+                //
+            }
+
+            return false;
+        }
+
+        //method to send password to user
+        public string SendPasswordToUser(string email, string username, string password)
+        {
+            var mailService = new MailServer.SystemSupportMail();
+            mailService.SendMail(
+                "GESTION DE PORTEFEUILLE DE PROJET: Votre mot de passe", 
+                "Hey, " + username + "\n\n\nYour request to have password" + " votre mot de passe est " + password,
+                new List<string>{email}
+            );
+
+            return "He! Vos identifiants sont: \n\n E-mail: "+ email + " \n Nom d'utilisateur: " + username + "\n " +
+                   " Mot de passe: " + password;
+        }
+
+        //login admin
+        public bool Login(string login, string password)
+        {
+            const string sql = "select * from admin where login = @login and mdp = @pass";
+
+            using (var connect = con.GetConnection())
+            {
+                MySqlDataReader reader;
+                connect.Open();
+                try
+                {
+                    using (command)
+                    {
+                        command.Connection = connect;
+                        command.CommandText = sql;
+                        command.Parameters.AddWithValue("@login", login);
+                        command.Parameters.AddWithValue("@pass", password);
+                        command.CommandType = CommandType.Text;
+                        reader = command.ExecuteReader();
+
+                        if (reader.HasRows)
+                            return true;
+                        else
+                            return false;
+                    }
+                }
+                catch
+                {
+
+                }finally{connect.Close();}
+            }
+
+            return true;
         }
     }
 }
