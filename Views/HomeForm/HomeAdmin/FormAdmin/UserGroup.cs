@@ -24,30 +24,42 @@ namespace Views.HomeForm.HomeAdmin.FormAdmin
             
         }
 
+        //private void SendPword()
+        //{
+        //    var sendPassword = admin.SendEmailPasswordToUser(txtEmail.Text,
+        //        txtIdenti.Text, txtMdp.Text);
+        //    MsgSuccess(sendPassword);
+        //}
 
         //save users in database
-        private void SaveUser()
+
+        //save data
+        private void SaveData()
         {
-            if (txtNom.Text != string.Empty && txtPrenom.Text != string.Empty && txtEmail.Text != string.Empty &&
-                txtTel.Text != string.Empty && txtAdress.Text != string.Empty && txtIdenti.Text != string.Empty &&
-                txtMdp.Text != string.Empty)
+            try
             {
-                try
+                JavaScript();
+                if (txtNom.Text != "" && txtProfil.Text != "" && txtPrenom.Text != "" && 
+                    txtEmail.Text != "" && txtAdress.Text != "" && txtFonction.Text != "" && 
+                    txtTel.Text != "" && txtIdenti.Text != "" )
                 {
-                    admin.AddUser(txtNom.Text, txtPrenom.Text, txtEmail.Text, txtTel.Text, txtAdress.Text,
-                        txtIdenti.Text, txtMdp.Text, txtProfil.SelectedIndex + 1);
+                    admin.AddUser(txtNom.Text, txtPrenom.Text, txtEmail.Text,
+                        txtTel.Text,
+                        txtAdress.Text, txtIdenti.Text, txtMdp.Text,
+                        txtProfil.SelectedIndex + 1);
+                    //Thread thread = new Thread(new ThreadStart(Sendpword));
+                    //thread.Start();
+                    MsgError("insertion ok  ");
                     FieldInit();
                 }
-                catch (Exception e)
-                {
-                   MsgError(e.Message);
-                }
             }
-            else
+            catch (Exception e)
             {
-                MsgError("Fill all the field, please!");
+               MsgError(e.Message);
             }
         }
+
+
 
         private void FieldInit()
         {
@@ -57,8 +69,7 @@ namespace Views.HomeForm.HomeAdmin.FormAdmin
             txtTel.Text = string.Empty;
             txtAdress.Text = string.Empty;
             txtIdenti.Text = string.Empty;
-            txtMdp.Text = string.Empty;
-            txtProfil.SelectedIndex = 0;
+            txtProfil.SelectedIndex = -1;
         }
 
         //method to show error message
@@ -66,13 +77,40 @@ namespace Views.HomeForm.HomeAdmin.FormAdmin
         {
             txterror.Text = errorMess;
             txterror.Visible = true;
-            txterror.FillColor = Color.DarkRed;
+            txterror.BackColor = Color.DarkRed;
             txterror.ForeColor = Color.AliceBlue;
         }
 
+        //javascript :) :)
+        private void JavaScript()
+        {
+            txtNom.BorderColor = txtNom.Text == "" ? Color.DarkRed : Color.FromArgb(213, 218, 223);
+            txtPrenom.BorderColor = txtPrenom.Text == "" ? Color.DarkRed : Color.FromArgb(213, 218, 223);
+            txtEmail.BorderColor = txtEmail.Text == "" ? Color.DarkRed : Color.FromArgb(213, 218, 223);
+            txtAdress.BorderColor = txtAdress.Text == "" ? Color.DarkRed : Color.FromArgb(213, 218, 223);
+            txtTel.BorderColor = txtTel.Text == string.Empty ? Color.DarkRed : Color.FromArgb(213, 218, 223);
+            txtFonction.BorderColor = txtFonction.Text == "" ? Color.DarkRed : Color.FromArgb(213, 218, 223);
+            txtIdenti.BorderColor = txtIdenti.Text == "" ? Color.DarkRed : Color.FromArgb(213, 218, 223);
+            txtProfil.BorderColor = txtProfil.Text == "" ? Color.DarkRed : Color.FromArgb(213, 218, 223);
+        }
+
+
+        //private void MsgSuccess(string errorMess)
+        //{
+        //    txterror.Text = errorMess;
+        //    txterror.Visible = true;
+        //    txterror.FillColor = Color.Aqua;
+        //    txterror.ForeColor = Color.AliceBlue;
+        //}
+
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            SaveUser();
+            SaveData();
+        }
+
+        private void Txterror_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

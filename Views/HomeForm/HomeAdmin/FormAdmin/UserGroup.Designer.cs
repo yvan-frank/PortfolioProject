@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlUser = new MetroFramework.Controls.MetroTabControl();
             this.tabViewuser = new System.Windows.Forms.TabPage();
             this.panContenUser = new System.Windows.Forms.Panel();
@@ -41,11 +41,9 @@
             this.txtAdress = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelShowSucess = new System.Windows.Forms.Panel();
-            this.txterror = new Guna.UI2.WinForms.Guna2Button();
+            this.txterror = new System.Windows.Forms.Label();
             this.txtTel = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTel = new System.Windows.Forms.Label();
-            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.txtMdp = new System.Windows.Forms.Label();
             this.lblMdp = new System.Windows.Forms.Label();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,7 +59,6 @@
             this.panHeadUser = new System.Windows.Forms.Panel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnAnnuler = new Guna.UI2.WinForms.Guna2Button();
-            this.lblUtilsateur = new System.Windows.Forms.Label();
             this.tabModif = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -125,12 +122,13 @@
             this.tabControlUser.Location = new System.Drawing.Point(0, 0);
             this.tabControlUser.Name = "tabControlUser";
             this.tabControlUser.RightToLeftLayout = true;
-            this.tabControlUser.SelectedIndex = 1;
+            this.tabControlUser.SelectedIndex = 0;
             this.tabControlUser.ShowToolTips = true;
             this.tabControlUser.Size = new System.Drawing.Size(840, 495);
             this.tabControlUser.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlUser.TabIndex = 0;
             this.tabControlUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabControlUser.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.tabControlUser.UseCustomBackColor = true;
             this.tabControlUser.UseCustomForeColor = true;
             this.tabControlUser.UseSelectable = true;
@@ -150,6 +148,7 @@
             // 
             // panContenUser
             // 
+            this.panContenUser.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panContenUser.Controls.Add(this.cardUserShow3);
             this.panContenUser.Controls.Add(this.cardUserShow2);
             this.panContenUser.Controls.Add(this.cardUserShow1);
@@ -179,8 +178,6 @@
             this.panContentAddUser.Controls.Add(this.panelShowSucess);
             this.panContentAddUser.Controls.Add(this.txtTel);
             this.panContentAddUser.Controls.Add(this.lblTel);
-            this.panContentAddUser.Controls.Add(this.guna2ShadowPanel2);
-            this.panContentAddUser.Controls.Add(this.guna2ShadowPanel1);
             this.panContentAddUser.Controls.Add(this.txtMdp);
             this.panContentAddUser.Controls.Add(this.lblMdp);
             this.panContentAddUser.Controls.Add(this.txtEmail);
@@ -285,22 +282,14 @@
             // 
             this.txterror.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txterror.BackColor = System.Drawing.Color.Transparent;
-            this.txterror.BorderRadius = 5;
-            this.txterror.BorderThickness = 1;
-            this.txterror.CheckedState.Parent = this.txterror;
-            this.txterror.CustomImages.Parent = this.txterror;
-            this.txterror.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.txterror.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txterror.ForeColor = System.Drawing.Color.Black;
-            this.txterror.HoverState.Parent = this.txterror;
-            this.txterror.Location = new System.Drawing.Point(69, 22);
+            this.txterror.Location = new System.Drawing.Point(164, 28);
             this.txterror.Name = "txterror";
-            this.txterror.ShadowDecoration.Parent = this.txterror;
-            this.txterror.Size = new System.Drawing.Size(700, 45);
-            this.txterror.TabIndex = 3;
-            this.txterror.Text = "Les identifiants ont été bien send";
+            this.txterror.Size = new System.Drawing.Size(492, 31);
+            this.txterror.TabIndex = 0;
+            this.txterror.Text = "label13";
+            this.txterror.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.txterror.Visible = false;
+            this.txterror.Click += new System.EventHandler(this.Txterror_Click);
             // 
             // txtTel
             // 
@@ -335,30 +324,6 @@
             this.lblTel.Size = new System.Drawing.Size(80, 21);
             this.lblTel.TabIndex = 16;
             this.lblTel.Text = "Téléphone";
-            // 
-            // guna2ShadowPanel2
-            // 
-            this.guna2ShadowPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(3, 322);
-            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
-            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(832, 10);
-            this.guna2ShadowPanel2.TabIndex = 15;
-            // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 51);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(832, 10);
-            this.guna2ShadowPanel1.TabIndex = 14;
             // 
             // txtMdp
             // 
@@ -561,7 +526,6 @@
             // 
             this.panHeadUser.Controls.Add(this.btnSave);
             this.panHeadUser.Controls.Add(this.btnAnnuler);
-            this.panHeadUser.Controls.Add(this.lblUtilsateur);
             this.panHeadUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHeadUser.Location = new System.Drawing.Point(0, 0);
             this.panHeadUser.Name = "panHeadUser";
@@ -578,10 +542,10 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(583, 3);
+            this.btnSave.Location = new System.Drawing.Point(583, 10);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
-            this.btnSave.Size = new System.Drawing.Size(241, 45);
+            this.btnSave.Size = new System.Drawing.Size(241, 30);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Créer et envoyer les identifiants par mail";
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -597,22 +561,12 @@
             this.btnAnnuler.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
             this.btnAnnuler.HoverState.Parent = this.btnAnnuler;
-            this.btnAnnuler.Location = new System.Drawing.Point(474, 3);
+            this.btnAnnuler.Location = new System.Drawing.Point(498, 10);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.ShadowDecoration.Parent = this.btnAnnuler;
-            this.btnAnnuler.Size = new System.Drawing.Size(81, 45);
+            this.btnAnnuler.Size = new System.Drawing.Size(79, 30);
             this.btnAnnuler.TabIndex = 1;
             this.btnAnnuler.Text = "Annuler";
-            // 
-            // lblUtilsateur
-            // 
-            this.lblUtilsateur.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUtilsateur.Location = new System.Drawing.Point(27, 3);
-            this.lblUtilsateur.Name = "lblUtilsateur";
-            this.lblUtilsateur.Size = new System.Drawing.Size(154, 45);
-            this.lblUtilsateur.TabIndex = 0;
-            this.lblUtilsateur.Text = "UTILISATEUR";
-            this.lblUtilsateur.Click += new System.EventHandler(this.LblUtilsateur_Click);
             // 
             // tabModif
             // 
@@ -739,8 +693,8 @@
             // guna2DataGridView1
             // 
             this.guna2DataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -750,14 +704,14 @@
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.guna2DataGridView1.ColumnHeadersHeight = 35;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -769,14 +723,14 @@
             this.email,
             this.tel,
             this.adresse});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(8, 7);
@@ -1103,10 +1057,10 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(583, 3);
+            this.guna2Button2.Location = new System.Drawing.Point(564, 10);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(241, 45);
+            this.guna2Button2.Size = new System.Drawing.Size(260, 28);
             this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Text = "Modifier et envoyer les identifiants par mail";
             // 
@@ -1121,10 +1075,10 @@
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(474, 3);
+            this.guna2Button4.Location = new System.Drawing.Point(481, 10);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(84, 45);
+            this.guna2Button4.Size = new System.Drawing.Size(77, 28);
             this.guna2Button4.TabIndex = 1;
             this.guna2Button4.Text = "Annuler";
             // 
@@ -1195,7 +1149,6 @@
         private System.Windows.Forms.Panel panHeadUser;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnAnnuler;
-        private System.Windows.Forms.Label lblUtilsateur;
         private Guna.UI2.WinForms.Guna2TextBox txtNom;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label txtMdp;
@@ -1208,12 +1161,9 @@
         private System.Windows.Forms.Label lblFonction;
         private Guna.UI2.WinForms.Guna2TextBox txtPrenom;
         private System.Windows.Forms.Label lblPrenom;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
         private Guna.UI2.WinForms.Guna2TextBox txtTel;
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.Panel panelShowSucess;
-        private Guna.UI2.WinForms.Guna2Button txterror;
         private Guna.UI2.WinForms.Guna2TextBox txtIdenti;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtAdress;
@@ -1251,5 +1201,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn tel;
         private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
+        private System.Windows.Forms.Label txterror;
     }
 }

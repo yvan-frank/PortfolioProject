@@ -49,6 +49,7 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnFermer = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panSecondHead = new System.Windows.Forms.Panel();
+            this.guna2RatingStar1 = new Guna.UI2.WinForms.Guna2RatingStar();
             this.lblStatusButton = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -87,10 +88,10 @@
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.HoverState.Parent = this.btnNew;
-            this.btnNew.Location = new System.Drawing.Point(28, 91);
+            this.btnNew.Location = new System.Drawing.Point(28, 99);
             this.btnNew.Name = "btnNew";
             this.btnNew.ShadowDecoration.Parent = this.btnNew;
-            this.btnNew.Size = new System.Drawing.Size(144, 45);
+            this.btnNew.Size = new System.Drawing.Size(136, 37);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "Nouveau";
             // 
@@ -229,6 +230,7 @@
             this.btnGesProjet.TabIndex = 2;
             this.btnGesProjet.Text = "    Gestion des projets";
             this.btnGesProjet.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnGesProjet.Click += new System.EventHandler(this.BtnGesProjet_Click);
             // 
             // btnGestUsers
             // 
@@ -256,7 +258,7 @@
             this.lblAdmin.AutoSize = true;
             this.lblAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblAdmin.Location = new System.Drawing.Point(361, 19);
+            this.lblAdmin.Location = new System.Drawing.Point(361, 12);
             this.lblAdmin.Name = "lblAdmin";
             this.lblAdmin.Size = new System.Drawing.Size(82, 13);
             this.lblAdmin.TabIndex = 2;
@@ -266,7 +268,7 @@
             // 
             this.picAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picAdmin.Image = ((System.Drawing.Image)(resources.GetObject("picAdmin.Image")));
-            this.picAdmin.Location = new System.Drawing.Point(451, 12);
+            this.picAdmin.Location = new System.Drawing.Point(451, 6);
             this.picAdmin.Name = "picAdmin";
             this.picAdmin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picAdmin.ShadowDecoration.Parent = this.picAdmin;
@@ -287,18 +289,19 @@
             this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHeader.Location = new System.Drawing.Point(212, 0);
             this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(688, 51);
+            this.panHeader.Size = new System.Drawing.Size(688, 36);
             this.panHeader.TabIndex = 1;
+            this.panHeader.TabStop = true;
             // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CirclePictureBox1.Image = global::Views.Properties.Resources.icons8_settingsblanc_32;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(492, 12);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(491, 9);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(21, 19);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 5;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -312,10 +315,10 @@
             this.guna2ControlBox3.HoverState.FillColor = System.Drawing.Color.Gray;
             this.guna2ControlBox3.HoverState.Parent = this.guna2ControlBox3;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(592, 0);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(592, 3);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.ShadowDecoration.Parent = this.guna2ControlBox3;
-            this.guna2ControlBox3.Size = new System.Drawing.Size(45, 49);
+            this.guna2ControlBox3.Size = new System.Drawing.Size(45, 30);
             this.guna2ControlBox3.TabIndex = 4;
             this.guna2ControlBox3.UseTransparentBackground = true;
             // 
@@ -328,10 +331,10 @@
             this.guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.Gray;
             this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(541, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(541, 3);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 48);
+            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 30);
             this.guna2ControlBox2.TabIndex = 3;
             this.guna2ControlBox2.UseTransparentBackground = true;
             // 
@@ -343,22 +346,33 @@
             this.btnFermer.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnFermer.HoverState.Parent = this.btnFermer;
             this.btnFermer.IconColor = System.Drawing.Color.White;
-            this.btnFermer.Location = new System.Drawing.Point(643, 0);
+            this.btnFermer.Location = new System.Drawing.Point(643, 3);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.PressedColor = System.Drawing.Color.Red;
             this.btnFermer.ShadowDecoration.Parent = this.btnFermer;
-            this.btnFermer.Size = new System.Drawing.Size(45, 49);
+            this.btnFermer.Size = new System.Drawing.Size(45, 30);
             this.btnFermer.TabIndex = 2;
             this.btnFermer.Click += new System.EventHandler(this.BtnFermer_Click);
             // 
             // panSecondHead
             // 
+            this.panSecondHead.Controls.Add(this.guna2RatingStar1);
             this.panSecondHead.Controls.Add(this.lblStatusButton);
             this.panSecondHead.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panSecondHead.Location = new System.Drawing.Point(212, 51);
+            this.panSecondHead.Location = new System.Drawing.Point(212, 36);
             this.panSecondHead.Name = "panSecondHead";
-            this.panSecondHead.Size = new System.Drawing.Size(688, 66);
+            this.panSecondHead.Size = new System.Drawing.Size(688, 28);
             this.panSecondHead.TabIndex = 3;
+            // 
+            // guna2RatingStar1
+            // 
+            this.guna2RatingStar1.BorderThickness = 1;
+            this.guna2RatingStar1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2RatingStar1.Location = new System.Drawing.Point(3, 4);
+            this.guna2RatingStar1.Name = "guna2RatingStar1";
+            this.guna2RatingStar1.Size = new System.Drawing.Size(57, 18);
+            this.guna2RatingStar1.TabIndex = 0;
+            this.guna2RatingStar1.Value = 4F;
             // 
             // lblStatusButton
             // 
@@ -366,19 +380,18 @@
             this.lblStatusButton.AutoSize = true;
             this.lblStatusButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblStatusButton.Location = new System.Drawing.Point(267, 25);
+            this.lblStatusButton.Location = new System.Drawing.Point(282, 3);
             this.lblStatusButton.Name = "lblStatusButton";
-            this.lblStatusButton.Size = new System.Drawing.Size(142, 21);
+            this.lblStatusButton.Size = new System.Drawing.Size(63, 21);
             this.lblStatusButton.TabIndex = 4;
-            this.lblStatusButton.Text = "When the is active";
-            this.lblStatusButton.Visible = false;
+            this.lblStatusButton.Text = "Accueil";
             // 
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(212, 117);
+            this.panelContainer.Location = new System.Drawing.Point(212, 64);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(688, 433);
+            this.panelContainer.Size = new System.Drawing.Size(688, 486);
             this.panelContainer.TabIndex = 4;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContainer_Paint);
             // 
@@ -439,5 +452,6 @@
         private System.Windows.Forms.Label lblDate;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2RatingStar guna2RatingStar1;
     }
 }
