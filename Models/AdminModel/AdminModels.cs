@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using Common.Cache;
 using MySql.Data.MySqlClient;
 namespace Models.AdminModel
 {
@@ -41,7 +43,7 @@ namespace Models.AdminModel
         public bool AddToUser(string login,string email, string password)
         {
             string sql =
-                "insert into memebre (login,email mdp) values('" + login + "', '" + email + "','" + password + "')";
+                "insert into membre (login,email mdp) values('" + login + "', '" + email + "','" + password + "')";
             int row;
             try
             {
@@ -98,9 +100,10 @@ namespace Models.AdminModel
             using (var connect = con.GetConnection())
             {
                 MySqlDataReader reader;
-                connect.Open();
+                
                 try
                 {
+                    connect.Open();
                     using (command)
                     {
                         command.Connection = connect;
@@ -118,11 +121,57 @@ namespace Models.AdminModel
                 }
                 catch
                 {
-
+                    //
                 }finally{connect.Close();}
+
+                return false;
             }
 
-            return true;
+        }
+
+        //check out data in database
+        public bool Checkdata(string nom, string prenom, string email, string login)
+        {
+            string sql = "select * from utilisateur";
+            using (var connection = con.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (command)
+                    {
+                        command.Connection = connection;
+                        command.CommandText = sql;
+                        command.CommandType = CommandType.Text;
+                        MySqlDataReader reader = command.ExecuteReader();
+
+
+                        while (reader.Read())
+                        {
+                            if (reader.HasRows)
+                            {
+                                UserCache.Nom = reader.GetString(1);
+                                UserCache.Prenom = reader.GetString(2);
+                                UserCache.Email = reader.GetString(3);
+                                UserCache.Login = reader.GetString(6);
+                            }
+                        }
+
+                        if (UserCache.Nom == nom && UserCache.Prenom == prenom &&
+                            UserCache.Email == email && UserCache.Login == login)
+                            return true;
+                        else
+                            return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+
         }
     }
 }

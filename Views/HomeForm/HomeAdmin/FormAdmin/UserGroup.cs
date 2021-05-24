@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using Controllers.Admin;
+using Views.Controls.AlertControl;
 
 namespace Views.HomeForm.HomeAdmin.FormAdmin
 {
     public partial class UserGroup : Form
     {
         
-        AdminController admin = new AdminController();
+       // AdminController admin = new AdminController();
         
         public UserGroup()
         {
@@ -24,12 +26,11 @@ namespace Views.HomeForm.HomeAdmin.FormAdmin
             
         }
 
-        //private void SendPword()
-        //{
-        //    var sendPassword = admin.SendEmailPasswordToUser(txtEmail.Text,
-        //        txtIdenti.Text, txtMdp.Text);
-        //    MsgSuccess(sendPassword);
-        //}
+        private void SendPword()
+        {
+            //var sendPassword = admin.SendEmailPasswordToUser(txtEmail.Text,
+            //    txtIdenti.Text, txtMdp.Text);
+        }
 
         //save users in database
 
@@ -43,13 +44,18 @@ namespace Views.HomeForm.HomeAdmin.FormAdmin
                     txtEmail.Text != "" && txtAdress.Text != "" && txtFonction.Text != "" && 
                     txtTel.Text != "" && txtIdenti.Text != "" )
                 {
-                    admin.AddUser(txtNom.Text, txtPrenom.Text, txtEmail.Text,
-                        txtTel.Text,
-                        txtAdress.Text, txtIdenti.Text, txtMdp.Text,
-                        txtProfil.SelectedIndex + 1);
-                    //Thread thread = new Thread(new ThreadStart(Sendpword));
-                    //thread.Start();
-                    MsgError("insertion ok  ");
+                    //admin.AddUser(txtNom.Text, txtPrenom.Text, txtEmail.Text,
+                    //    txtTel.Text,
+                    //    txtAdress.Text, txtIdenti.Text, txtMdp.Text,
+                    //    txtProfil.SelectedIndex + 1);
+                    var thread = new Thread(new ThreadStart(SendPword));
+                    thread.Start();
+                    thread.IsBackground = true;
+
+                    if (thread.IsBackground)
+                    {
+                        AlertBox.Show("les id sont envoyes", AlertBox.AlertType.Info);
+                    }
                     FieldInit();
                 }
             }

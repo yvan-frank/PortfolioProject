@@ -1,39 +1,41 @@
-﻿using Models;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
+using Models;
 using Models.AdminModel;
 
 namespace Controllers.Admin
 {
-    public class AdminController:Utilisateur
+    public class AdminController
     {
         AdminModels adminModels = new AdminModels();
-        public void AddUser(string nom, string prenom, string email, string telephone, string adresse, string login,
-            string password, int typeUser)
-        {
-            Nom = nom;
-            Prenom = prenom;
-            Email = email;
-            Telephone = int.Parse(telephone);
-            Address = adresse;
-            Login = login;
-            Password = password;
-
-            adminModels.AddUser(Nom, Prenom, Email, Telephone, Address, Login, Password, typeUser);
-        }
 
         public bool LoginAdmin(string username, string password)
         {
             return adminModels.Login(username, password);
         }
 
-        public bool AddToUser(string login, string email, string pass)
+        public bool AddToUser(Utilisateur user)
         {
-            return adminModels.AddToUser(Login, Email, Password);
+            return adminModels.AddToUser(user.Login, user.Email, user.Password);
         }
 
-        //
-        public string SendEmailPasswordToUser(string email, string username, string password)
+
+        public void AddUserAdmin(Utilisateur user  ,int typeUser)
         {
-            return adminModels.SendPasswordToUser(email, username, password);
+            adminModels.AddUser(user.Nom, user.Prenom, user.Email, user.Telephone, user.Address, 
+                user.Login, user.Password, typeUser);
+        }
+
+
+        public string SendEmailPasswordToUser(Utilisateur user)
+        {
+            return adminModels.SendPasswordToUser(user.Email,user.Login, user.Password);
+        }
+
+        public bool Checkdata(Utilisateur user)
+        {
+            return adminModels.Checkdata(user.Nom, user.Prenom, user.Email,user.Login);
         }
     }
 }

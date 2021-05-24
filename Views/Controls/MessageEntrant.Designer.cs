@@ -86,6 +86,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MessageEntrant";
             this.Size = new System.Drawing.Size(453, 75);
+            this.Load += new System.EventHandler(this.MessageEntrant_Load);
             this.Resize += new System.EventHandler(this.MessageEntrant_Resize);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();

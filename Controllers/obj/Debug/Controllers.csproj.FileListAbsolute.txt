@@ -13,6 +13,7 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\Controllers
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\Controllers.pdb
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\Common.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\Models.dll
+E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\MySql.Data.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\Common.pdb
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\Models.pdb
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers.csprojAssemblyReference.cache
@@ -20,4 +21,3 @@ E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers.csproj.CopyComplete
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers.dll
 E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\obj\Debug\Controllers.pdb
-E:\PROJECT\Tutoré\Repository\PortfolioProject\Controllers\bin\Debug\MySql.Data.dll
