@@ -36,7 +36,6 @@
             this.btnLogin = new Guna.UI.WinForms.GunaButton();
             this.txtPassword = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtUsername = new Guna.UI.WinForms.GunaLineTextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -45,7 +44,6 @@
             this.btnfermer = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panField.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -66,7 +64,6 @@
             this.panField.Controls.Add(this.btnLogin);
             this.panField.Controls.Add(this.txtPassword);
             this.panField.Controls.Add(this.txtUsername);
-            this.panField.Controls.Add(this.pictureBox2);
             this.panField.Location = new System.Drawing.Point(397, 55);
             this.panField.Name = "panField";
             this.panField.Size = new System.Drawing.Size(289, 396);
@@ -152,16 +149,6 @@
             this.txtUsername.Enter += new System.EventHandler(this.TxtUsername_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.TxtUsername_Leave);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(127, 14);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(66, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.TargetControl = this;
@@ -218,7 +205,6 @@
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panField.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,7 +216,6 @@
         private Guna.UI.WinForms.GunaButton btnLogin;
         private Guna.UI.WinForms.GunaLineTextBox txtPassword;
         private Guna.UI.WinForms.GunaLineTextBox txtUsername;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;

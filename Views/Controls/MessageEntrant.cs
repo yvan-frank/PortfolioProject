@@ -45,5 +45,10 @@ namespace Views.Controls
         {
             AjustHeight();
         }
+
+        private void MessageEntrant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

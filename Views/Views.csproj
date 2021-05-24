@@ -55,6 +55,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
@@ -99,6 +100,12 @@
     <Compile Include="Controls\CardUserShow.Designer.cs">
       <DependentUpon>CardUserShow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FormAdminControls\ShowUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FormAdminControls\ShowUserControl.Designer.cs">
+      <DependentUpon>ShowUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LoadingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +135,30 @@
     </Compile>
     <Compile Include="HomeForm\HomeAdmin\ConfigServer\ServerForm.designer.cs">
       <DependentUpon>ServerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\AdminForm.designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\FormAdmin\AccueilFormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\FormAdmin\AccueilFormAdmin.Designer.cs">
+      <DependentUpon>AccueilFormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\FormAdmin\AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\FormAdmin\AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\FormAdmin\GestionUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm\HomeAdmin\FormAdmin\GestionUser.Designer.cs">
+      <DependentUpon>GestionUser.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm\HomeAdmin\FormAdmin\UserGroup.cs">
       <SubType>Form</SubType>
@@ -185,6 +216,9 @@
     <EmbeddedResource Include="Controls\CardUserShow.resx">
       <DependentUpon>CardUserShow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormAdminControls\ShowUserControl.resx">
+      <DependentUpon>ShowUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\LoadingControl.resx">
       <DependentUpon>LoadingControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +233,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm\HomeAdmin\ConfigServer\ServerForm.resx">
       <DependentUpon>ServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm\HomeAdmin\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm\HomeAdmin\FormAdmin\AccueilFormAdmin.resx">
+      <DependentUpon>AccueilFormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm\HomeAdmin\FormAdmin\AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm\HomeAdmin\FormAdmin\GestionUser.resx">
+      <DependentUpon>GestionUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm\HomeAdmin\FormAdmin\UserGroup.resx">
       <DependentUpon>UserGroup.cs</DependentUpon>
@@ -265,7 +311,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\FormAdminControls\" />
     <Folder Include="HomeForm\HomeChefProjet\" />
   </ItemGroup>
   <ItemGroup>

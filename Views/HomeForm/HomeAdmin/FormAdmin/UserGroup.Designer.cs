@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlUser = new MetroFramework.Controls.MetroTabControl();
             this.tabViewuser = new System.Windows.Forms.TabPage();
             this.panContenUser = new System.Windows.Forms.Panel();
@@ -93,12 +93,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.cardUserShow3 = new Views.Controls.CardUserShow();
-            this.cardUserShow2 = new Views.Controls.CardUserShow();
-            this.cardUserShow1 = new Views.Controls.CardUserShow();
             this.tabControlUser.SuspendLayout();
             this.tabViewuser.SuspendLayout();
-            this.panContenUser.SuspendLayout();
             this.tabAdd.SuspendLayout();
             this.panContentAddUser.SuspendLayout();
             this.panelShowSucess.SuspendLayout();
@@ -122,7 +118,7 @@
             this.tabControlUser.Location = new System.Drawing.Point(0, 0);
             this.tabControlUser.Name = "tabControlUser";
             this.tabControlUser.RightToLeftLayout = true;
-            this.tabControlUser.SelectedIndex = 0;
+            this.tabControlUser.SelectedIndex = 1;
             this.tabControlUser.ShowToolTips = true;
             this.tabControlUser.Size = new System.Drawing.Size(840, 495);
             this.tabControlUser.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
@@ -149,9 +145,6 @@
             // panContenUser
             // 
             this.panContenUser.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panContenUser.Controls.Add(this.cardUserShow3);
-            this.panContenUser.Controls.Add(this.cardUserShow2);
-            this.panContenUser.Controls.Add(this.cardUserShow1);
             this.panContenUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panContenUser.Location = new System.Drawing.Point(0, 0);
             this.panContenUser.Name = "panContenUser";
@@ -693,8 +686,8 @@
             // guna2DataGridView1
             // 
             this.guna2DataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -704,14 +697,14 @@
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.guna2DataGridView1.ColumnHeadersHeight = 35;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -723,14 +716,14 @@
             this.email,
             this.tel,
             this.adresse});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(8, 7);
@@ -1082,32 +1075,6 @@
             this.guna2Button4.TabIndex = 1;
             this.guna2Button4.Text = "Annuler";
             // 
-            // cardUserShow3
-            // 
-            this.cardUserShow3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardUserShow3.Location = new System.Drawing.Point(623, 38);
-            this.cardUserShow3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cardUserShow3.Name = "cardUserShow3";
-            this.cardUserShow3.Size = new System.Drawing.Size(199, 249);
-            this.cardUserShow3.TabIndex = 2;
-            // 
-            // cardUserShow2
-            // 
-            this.cardUserShow2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cardUserShow2.Location = new System.Drawing.Point(318, 38);
-            this.cardUserShow2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cardUserShow2.Name = "cardUserShow2";
-            this.cardUserShow2.Size = new System.Drawing.Size(199, 249);
-            this.cardUserShow2.TabIndex = 1;
-            // 
-            // cardUserShow1
-            // 
-            this.cardUserShow1.Location = new System.Drawing.Point(25, 38);
-            this.cardUserShow1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cardUserShow1.Name = "cardUserShow1";
-            this.cardUserShow1.Size = new System.Drawing.Size(171, 249);
-            this.cardUserShow1.TabIndex = 0;
-            // 
             // UserGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1119,7 +1086,6 @@
             this.Load += new System.EventHandler(this.UserGroup_Load);
             this.tabControlUser.ResumeLayout(false);
             this.tabViewuser.ResumeLayout(false);
-            this.panContenUser.ResumeLayout(false);
             this.tabAdd.ResumeLayout(false);
             this.panContentAddUser.ResumeLayout(false);
             this.panContentAddUser.PerformLayout();
@@ -1142,9 +1108,6 @@
         private System.Windows.Forms.TabPage tabAdd;
         private System.Windows.Forms.TabPage tabModif;
         private System.Windows.Forms.Panel panContenUser;
-        private Controls.CardUserShow cardUserShow3;
-        private Controls.CardUserShow cardUserShow2;
-        private Controls.CardUserShow cardUserShow1;
         private System.Windows.Forms.Panel panContentAddUser;
         private System.Windows.Forms.Panel panHeadUser;
         private Guna.UI2.WinForms.Guna2Button btnSave;

@@ -11,7 +11,7 @@ namespace Views.LoginForm
     public partial class Login : Form
     {
         HomeAdministrator homeAdministrator = new HomeAdministrator();
-        private AdminController adnAdminController = new AdminController();
+       // private AdminController adnAdminController = new AdminController();
         public Login()
         {
             InitializeComponent();
@@ -27,20 +27,20 @@ namespace Views.LoginForm
 
             if (txtUsername.Text != string.Empty && txtPassword.Text != string.Empty)
             {
-                var isLogin = adnAdminController.LoginAdmin(txtUsername.Text, txtPassword.Text);
-                if (isLogin)
-                {
-                    timer1.Start();
-                    pg.Visible = true;
-                    pg.AutoStart = true;
-                    EtatFormLogin();
-                    AlertBox.Show("Connexion reussie!\t:)", AlertBox.AlertType.Success);
-                    homeAdministrator.FormClosed += Logout;
-                }
-                else
-                {
-                   AlertBox.Show("Impossible d'acceder a votre compte, \n Veuillez reessayer", AlertBox.AlertType.Warning);
-                }
+                //var isLogin = adnAdminController.LoginAdmin(txtUsername.Text, txtPassword.Text);
+                //if (isLogin)
+                //{
+                //    timer1.Start();
+                //    pg.Visible = true;
+                //    pg.AutoStart = true;
+                //    EtatFormLogin();
+                //    AlertBox.Show("Connexion reussie!\t:)", AlertBox.AlertType.Success);
+                //    homeAdministrator.FormClosed += Logout;
+                //}
+                //else
+                //{
+                //   AlertBox.Show("Impossible d'acceder a votre compte, \n Veuillez reessayer", AlertBox.AlertType.Warning);
+                //}
             }
             else
             {
